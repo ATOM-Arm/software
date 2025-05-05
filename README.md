@@ -31,6 +31,30 @@ Desenvolver um braço robótico que interprete cenários visuais e execute taref
 - ✅ Documentar para replicação acadêmica
 
 ---
+```
+## 📂 Estrutura de Pastas
+📦 braco-robotico
+├── 📂 docs # Documentação acadêmica e relatórios
+│ ├── 📄 especificacoes.pdf # Requisitos do sistema
+│ └── 📄 manual_tecnico.md # Guia de implementação
+├── 📂 firmware # Código Arduino
+│ ├── 📄 braco_robotico.ino # Sketch principal
+│ └── 📄 pid_controller.h # Biblioteca de controle
+├── 📂 modelos_3d # Arquivos para impressão
+│ ├── 📄 base.stl # Peça estrutural
+│ ├── 📄 garra.stl # Módulo de preensão
+│ └── 📄 articulacoes/ # Conjunto de eixos
+├── 📂 src # Código Python
+│ ├── 📄 main.py # Script de visão computacional
+│ ├── 📄 gesture_tracker.py # Lógica de rastreamento
+│ └── 📄 serial_com.py # Comunicação Arduino
+├── 📂 testes # Scripts de validação
+│ ├── 📄 calibracao.py # Ajuste de servomotores
+│ └── 📄 precision_test/ # Dataset de validação
+├── 📄 LICENSE # Licença MIT
+└── 📄 README.md # Documentação principal
+```
+---
 
 ## 🛠️ Arquitetura do Sistema
 ### Hardware
