@@ -31,7 +31,7 @@ Desenvolver um braço robótico que interprete cenários visuais e execute taref
 - ✅ Documentar para replicação acadêmica
 
 ---
-
+```
 ## 📂 Estrutura de Pastas
 📦 braco-robotico
 ├── 📂 docs # Documentação acadêmica e relatórios
@@ -53,7 +53,7 @@ Desenvolver um braço robótico que interprete cenários visuais e execute taref
 │ └── 📄 precision_test/ # Dataset de validação
 ├── 📄 LICENSE # Licença MIT
 └── 📄 README.md # Documentação principal
-
+```
 ---
 
 ## 🛠️ Arquitetura do Sistema
