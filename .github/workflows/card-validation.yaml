@@ -1,0 +1,51 @@
+name: Validate PR with Ticket
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, edited]
+jobs:
+  validate-pr:
+    runs-on: ubuntu-latest
+
+    permissions:
+      pull-requests: write
+      issues: write
+      contents: read
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Validate PR ticket link
+      id: validate_pr
+      env:
+        GITHUB_HEAD_REF: ${{ github.head_ref }}  # Branch name
+        PR_TITLE: ${{ github.event.pull_request.title }}  # PR Title
+      run: |
+        if ! python scripts/validate_pr.py; then
+          echo "validation_failed=true" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Notify user and fail job if validation fails
+      if: steps.validate_pr.outputs.validation_failed == 'true'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          // Add a comment to the PR
+          const { data: comment } = await github.rest.issues.createComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.issue.number,
+            body: "**Validation Failed!** \n\n" +
+          "The branch name and PR title must follow the `TADocs-` pattern.\n" +
+          "- Ensure the branch name starts with `TADocs-`.\n" +
+          "- Ensure the PR title contains `TADocs-`.\n\n" +
+          "Please adjust and try again. Thank you!"
+          });
+          console.log(`Comment added: ${comment.html_url}`);
+          // Fail the job manually
+          throw new Error("Validation failed. Check the comment on the PR for more details.");
