@@ -41,9 +41,9 @@ jobs:
             repo: context.repo.repo,
             issue_number: context.issue.number,
             body: "**Validation Failed!** \n\n" +
-          "The branch name and PR title must follow the `TADocs-` pattern.\n" +
-          "- Ensure the branch name starts with `TADocs-`.\n" +
-          "- Ensure the PR title contains `TADocs-`.\n\n" +
+          "The branch name and PR title must follow the `ATOM-SW-` pattern.\n" +
+          "- Ensure the branch name starts with `ATOM-SW-`.\n" +
+          "- Ensure the PR title contains `ATOM-SW-`.\n\n" +
           "Please adjust and try again. Thank you!"
           });
           console.log(`Comment added: ${comment.html_url}`);
