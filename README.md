@@ -9,7 +9,7 @@
 ---
 
 ## 📜 Resumo do Projeto
-Solução robótica baseada no modelo **articulado** (Groover, 2011) com:
+Solução robótica baseada no modelo **articulado** (Groover, 2011) com: 
 - 👁️ Visão computacional para rastreamento de gestos (CVZone/OpenCV)
 - 🦾 Peças personalizadas em impressão 3D (PLA/ABS)
 - 🧠 Controle inteligente via Arduino (C++) e Python
