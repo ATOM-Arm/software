@@ -1,6 +1,6 @@
-# 🤖 Braço Robótico com Visão Computacional  
-**Sistema mecatrônico articulado controlado por gestos humanos via OpenCV e Arduino**  
-*(Projeto GIC - Centro Universitário Dom Helder Câmara | 2025)*  
+# 🤖 Robotic Arm with Computer Vision  
+**Articulated mechatronic system controlled by human gestures via OpenCV and Arduin**  
+*(GIC Project - Centro Universitário Dom Helder Câmara | 2025)*  
 
 [![Licença MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)  
 [![Video Demo](https://img.shields.io/badge/YouTube-Demonstração-red)](https://youtu.be/4t1daCFQ1OE)  
@@ -8,77 +8,76 @@
 
 ---
 
-## 📜 Resumo do Projeto
-Solução robótica baseada no modelo **articulado** (Groover, 2011) com:
-- 👁️ Visão computacional para rastreamento de gestos (CVZone/OpenCV)
-- 🦾 Peças personalizadas em impressão 3D (PLA/ABS)
-- 🧠 Controle inteligente via Arduino (C++) e Python
-- 📚 Documentação acadêmica completa
+## 📜 Project Overview
+Robotic solution based on the **articulated** model (Groover, 2011) with:
+- 👁️ Computer vision for gesture tracking (CVZone/OpenCV)
+- 🦾 Custom 3D-printed parts (PLA/ABS)
+- 🧠 Intelligent control via Arduino (C++) and Python
+- 📚 Complete academic documentation
 
-**Palavras-chave**: Robótica, Visão Computacional, Arduino, OpenCV, Impressão 3D
+**Keywords**: Robotics, Computer Vision, Arduino, OpenCV, 3D Printing
 
 ---
 
-## 🎯 Objetivos
-### Geral
-Desenvolver um braço robótico que interprete cenários visuais e execute tarefas autônomas (ROSÁRIO, 2010)
+## 🎯 Objectives
+### General
+Develop a robotic arm that interprets visual scenarios and performs autonomous tasks (ROSÁRIO, 2010)
 
-### Específicos
-- ✅ Integrar impressão 3D na fabricação de peças
-- ✅ Implementar módulos mecânicos/eletrônicos
-- ✅ Desenvolver algoritmos de rastreamento com CVZone
-- ✅ Testar precisão em manipulação de objetos
-- ✅ Documentar para replicação acadêmica
+### Specific
+- ✅ Integrate 3D printing in part fabrication
+- ✅ Implement mechanical/electronic modules
+- ✅ Develop tracking algorithms with CVZone
+- ✅ Test precision in object manipulation
+- ✅ Document for academic replication
 
 ---
 ```
-## 📂 Estrutura de Pastas
-📦 braco-robotico
-├── 📂 docs # Documentação acadêmica e relatórios
-│ ├── 📄 especificacoes.pdf # Requisitos do sistema
-│ └── 📄 manual_tecnico.md # Guia de implementação
-├── 📂 firmware # Código Arduino
-│ ├── 📄 braco_robotico.ino # Sketch principal
-│ └── 📄 pid_controller.h # Biblioteca de controle
-├── 📂 modelos_3d # Arquivos para impressão
-│ ├── 📄 base.stl # Peça estrutural
-│ ├── 📄 garra.stl # Módulo de preensão
-│ └── 📄 articulacoes/ # Conjunto de eixos
-├── 📂 src # Código Python
-│ ├── 📄 main.py # Script de visão computacional
-│ ├── 📄 gesture_tracker.py # Lógica de rastreamento
-│ └── 📄 serial_com.py # Comunicação Arduino
-├── 📂 testes # Scripts de validação
-│ ├── 📄 calibracao.py # Ajuste de servomotores
-│ └── 📄 precision_test/ # Dataset de validação
+## 📂 Folder Structure
+📦 software
+├── 📂 .github
+│ ├── 📂 workflows
+|      └── 📄 card-validation.yaml
+│ └── 📂 CODEOWNERS
+├── 📂 scripts
+│    └── 📄 validate_pr.py
+├── 📂 software.dsp
+│   ├── 📂 arduino
+|        └── 📄 pid_config.h
+|        └── 📄 servo_control.ino
+│   └── 📂 python
+|        └── 📄 hand_tracker.py
+|        └── 📄 main.py
+|        └── 📄 requirements.txt
+|        └── 📄 serial_comm.py
 ├── 📄 LICENSE # Licença MIT
-└── 📄 README.md # Documentação principal
+├── 📄 README.md # Documentação principal
+└── 📄 requirements.txt
 ```
 ---
 
-## 🛠️ Arquitetura do Sistema
+## 🛠️ System Architecture
 ### Hardware
-| Componente               | Especificações                          |  
+| Component                | Specifications                          |  
 |--------------------------|----------------------------------------|  
-| **Arduino Uno/Nano**     | Controle PID dos servomotores          |  
-| **Servomotores MG996R**  | 10kg/cm torque, 180° rotação          |  
-| **Logitech C920**        | 1080p @ 30fps para rastreamento       |  
-| **Peças 3D**            | Modelos InMoov (STL disponíveis [aqui](#-apêndice)) |  
+| **Arduino Uno/Nano**     | PID control of servo motors          |  
+| **MG996R Servos**  | 10kg/cm torque, 180° rotation          |  
+| **Logitech C920**        | 1080p @ 30fps for tracking       |  
+| **3D Parts**            | InMoov models (STL available [here](#-apêndice)) |  
 
 ### Software
-| Camada          | Tecnologias                          |
+| Layer          | 	Technologies                          |
 |-----------------|--------------------------------------|
-| **Visão**       | Python 3.8+, OpenCV 4.7, CVZone 1.5 |
-| **Controle**    | C++ (Arduino IDE), PlatformIO       |
-| **Comunicação** | Protocolo Serial @ 115200 baud      |
+| **Vision**       | Python 3.8+, OpenCV 4.7, CVZone 1.5 |
+| **Control**    | C++ (Arduino IDE), PlatformIO       |
+| **Communication** | Serial Protocol @ 115200 baud      |
 
 ---
 
-## ⚙️ Guia de Instalação
-### Pré-requisitos
+## ⚙️ Installation Guide
+### Prerequisites
 - Arduino IDE 2.0+
 - Python 3.8+
-- Impressora 3D (configuração recomendada: 0.2mm layer height, 20% infill)
+- 3D Printer (recommended configuration: 0.2mm layer height, 20% infill)
 
 ### Setup
 ```bash
