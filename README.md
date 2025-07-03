@@ -1,6 +1,6 @@
-# 📚 Robotic Arm – Software Repository
+# 📚 Robotic Arm – Hardware Repository
 
-This repository contains the source code and computational components of the Robotic Arm with Computer Vision project. It focuses on the software system responsible for gesture recognition, motor control, and integration with Arduino hardware.
+This repository contains the 3D models and solid components of the Robotic Arm with Computer Vision project. It focuses on the hardware build and connection with Arduino board.
 
 [![Licença MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)  
 [![Video Demo](https://img.shields.io/badge/YouTube-Demonstração-red)](https://youtu.be/4t1daCFQ1OE)  
