@@ -10,16 +10,12 @@ This repository contains the source code and computational components of the Rob
 
 ## 🎯 Objectives
 
-This repository contains the **software system** of the **ATOM Project**, a robotic arm controlled through computer vision and built using 3D printing and open-source hardware. While the overall project integrates mechanics, electronics, and software, this repository focuses specifically on the **computational logic** that enables intelligent control and visual interaction.
+This repository contains the **hardware** of the **ATOM Project**, a robotic arm controlled through computer vision and built using 3D printing and open-source hardware. While the overall project integrates electronics, and software, this repository focuses specifically on the mechanical and solid parts.
 
 The repository includes all source code related to:
 
-- 🧠 **Computer vision and gesture recognition**, powered by OpenCV and CVZone
-- 📡 **Communication with Arduino**, for controlling servo motors via serial interface
-- ⚙️ **Control algorithms and system logic** written in Python
-- 🧪 **Testing scripts and prototypes** of the vision-control pipeline
-
-This software is a core component of the ATOM Project and is continually evolving to support research, experimentation, and educational development in robotics and automation.
+- 🧠 **Forearm, wrist and hand building**, using 3D printed pieces and electronical components.
+- 📡 **Connection with Arduino**, we'll use cable connections to communicate with the arduino board.
 
 ---
 
@@ -27,45 +23,29 @@ This software is a core component of the ATOM Project and is continually evolvin
 ## 📂 Folder Structure
 📦 software
 ├── 📂 .github                 # GitHub integration workflows and configs
-├── 📂 software.dsp            # Main computational system source code
-│   ├── 📂 arduino             # Embedded code for servo control
-│   └── 📂 python              # Python scripts for vision and control
+├── 📂 scripts                 # Needed scripts to the github project organization
 ├── 📄 LICENSE                 # Project MIT license
 ├── 📄 README.md               # Main repository documentation
-└── 📄 requirements.txt        # Python dependencies list
 ```
 
 ---
 
-## ⚙️ Installation Guide
-
 ### Prerequisites
+- Git version 2.25 or higher
+- Access to a terminal/command line
 
-- Arduino IDE 2.0+
-- Python 3.8+
-- 3D Printer (recommended configuration: 0.2mm layer height, 20% infill)
-- OpenCV 4.7.0
-- CVZone 1.5.6
-
-### Setup
+### Steps
 
 ```bash
+# 1. Clone the repository without checking out files
+git clone --filter=blob:none --no-checkout https://github.com/username/repository.git
+cd repository
 
-# 1. Clone the repository
-git clone https://github.com/ATOM-Arm/software
-cd braco-robotico
+# 2. Enable sparse checkout
+git sparse-checkout init --cone
 
-# 2. Install Python dependencies
-pip install -r requirements.txt
-# The file includes:
-# opencv-python==4.7.0.72
-# cvzone==1.5.6
-# pyserial==3.5
+# 3. Set the folder you want to download
+git sparse-checkout set path/to/folder
 
-# 3. Open Arduino IDE and load the code from software.dsp/arduino
-
-# 4. Upload the code to your Arduino board
-
-# 5. Run the Python scripts in software.dsp/python
-
-```
+# 4. Checkout the content
+git checkout
